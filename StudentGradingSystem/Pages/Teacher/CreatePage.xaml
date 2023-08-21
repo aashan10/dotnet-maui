@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StudentGradingSystem.Pages.Teacher.CreatePage"
+             Title="Add Student">
+
+    <StackLayout Padding="20">
+        <Label Text="Student ID:" />
+        <Entry Text="{Binding StudentID}" Placeholder="Enter student ID" />
+        <Label Text="Student Name:" />
+        <Entry Text="{Binding StudentName}" Placeholder="Enter student name" />
+
+        <Label Text="Subjects and Marks:" />
+        <StackLayout BindableLayout.ItemsSource="{Binding Subjects}">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <Entry Placeholder="Subject Name" Text="{Binding SubjectName}" />
+                        <Entry Placeholder="Written Marks" Text="{Binding Written}" Keyboard="Numeric" />
+                        <Entry Placeholder="Oral Marks" Text="{Binding Oral}" Keyboard="Numeric" />
+                        <Entry Placeholder="Attendance Marks" Text="{Binding Attendance}" Keyboard="Numeric" />
+                        <Entry Placeholder="Project Marks" Text="{Binding Project}" Keyboard="Numeric" />
+                    </StackLayout>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </StackLayout>
+
+        <Button Text="Add Subject" Command="{Binding AddSubjectCommand}" />
+
+        <Button Text="Add Record" Command="{Binding AddRecordCommand}" />
+    </StackLayout>
+</ContentPage>

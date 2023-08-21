@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StudentGradingSystem.Pages.Teacher.DetailsPage"
+             Title="{Binding Student.StudentName}">
+    
+    <VerticalStackLayout Padding="20, 20" Spacing="20">
+       <HorizontalStackLayout Spacing="10">
+           <Label Text="Student Name: "></Label>
+           <Label Text="{Binding Student.StudentName}"></Label>
+       </HorizontalStackLayout>
+        <HorizontalStackLayout Spacing="10">
+           <Label Text="Student ID: "></Label>
+           <Label Text="{Binding Student.StudentID}"></Label>
+       </HorizontalStackLayout>
+
+        <HorizontalStackLayout Spacing="20">
+            <Label Text="Grand Total:" />
+            <Label Text="{Binding Student.GetTotalObtainedMarks}" />
+            <Label Text="Out of " />
+            <Label Text="{Binding Student.GetFullMarks}" />
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout Spacing="20">
+            <Label Text="Result:" />
+            <Label Text="{Binding Student.GetResultString}" />
+        </HorizontalStackLayout>
+
+        <Line BackgroundColor="LightGray" />
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                <ColumnDefinition Width="0.16*"></ColumnDefinition>
+                <ColumnDefinition Width="0.16*"></ColumnDefinition>
+                <ColumnDefinition Width="0.16*"></ColumnDefinition>
+                <ColumnDefinition Width="0.16*"></ColumnDefinition>
+                <ColumnDefinition Width="0.16*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" Text="Subject" FontAttributes="Bold"></Label>
+            <Label Grid.Column="1" Text="Written" FontAttributes="Bold"></Label>
+            <Label Grid.Column="2" Text="Oral" FontAttributes="Bold"></Label>
+            <Label Grid.Column="3" Text="Attendance" FontAttributes="Bold"></Label>
+            <Label Grid.Column="4" Text="Project" FontAttributes="Bold"></Label>
+            <Label Grid.Column="5" Text="Total" FontAttributes="Bold"></Label>
+        </Grid>
+
+        <Line BackgroundColor="LightGray" />
+        
+        <!-- Print a table that contains Eight columns -->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                <ColumnDefinition Width="0.08*"></ColumnDefinition>
+                <ColumnDefinition Width="0.08*"></ColumnDefinition>
+                <ColumnDefinition Width="0.08*"></ColumnDefinition>
+                <ColumnDefinition Width="0.08*"></ColumnDefinition>
+                <ColumnDefinition Width="0.08*"></ColumnDefinition>
+                <ColumnDefinition Width="0.08*"></ColumnDefinition>
+                <ColumnDefinition Width="0.08*"></ColumnDefinition>
+                <ColumnDefinition Width="0.08*"></ColumnDefinition>
+                <ColumnDefinition Width="0.08*"></ColumnDefinition>
+                <ColumnDefinition Width="0.08*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" Text="Out of" FontAttributes="Bold"></Label>
+            <Label Grid.Column="1" Text="20" FontAttributes="Bold"></Label>
+            <Label Grid.Column="2" Text="40%" FontAttributes="Bold"></Label>
+            <Label Grid.Column="3" Text="10" FontAttributes="Bold"></Label>
+            <Label Grid.Column="4" Text="20%" FontAttributes="Bold"></Label>
+            <Label Grid.Column="5" Text="10" FontAttributes="Bold"></Label>
+            <Label Grid.Column="6" Text="20%" FontAttributes="Bold"></Label>
+            <Label Grid.Column="7" Text="10" FontAttributes="Bold"></Label>
+            <Label Grid.Column="8" Text="20%" FontAttributes="Bold"></Label>
+            <Label Grid.Column="9" Text="50" FontAttributes="Bold"></Label>
+            <Label Grid.Column="10" Text="100%" FontAttributes="Bold"></Label>
+        </Grid>
+        <Line BackgroundColor="LightGray" />
+        <!-- Print a table that contains 11 columns -->
+        <CollectionView ItemsSource="{Binding Student.Results}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <VerticalStackLayout >
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                                <ColumnDefinition Width="0.08*"></ColumnDefinition>
+                                <ColumnDefinition Width="0.08*"></ColumnDefinition>
+                                <ColumnDefinition Width="0.08*"></ColumnDefinition>
+                                <ColumnDefinition Width="0.08*"></ColumnDefinition>
+                                <ColumnDefinition Width="0.08*"></ColumnDefinition>
+                                <ColumnDefinition Width="0.08*"></ColumnDefinition>
+                                <ColumnDefinition Width="0.08*"></ColumnDefinition>
+                                <ColumnDefinition Width="0.08*"></ColumnDefinition>
+                                <ColumnDefinition Width="0.08*"></ColumnDefinition>
+                                <ColumnDefinition Width="0.08*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Label Grid.Column="0" Text="{Binding SubjectName}" FontAttributes="Bold"></Label>
+                            <Label Grid.Column="1" Text="{Binding Written}" FontAttributes="Bold"></Label>
+                            <Label Grid.Column="2" Text="{Binding GetWrittenPercentage}" FontAttributes="Bold"></Label>
+                            <Label Grid.Column="3" Text="{Binding Oral}" FontAttributes="Bold"></Label>
+                            <Label Grid.Column="4" Text="{Binding GetOralPercentage}" FontAttributes="Bold"></Label>
+                            <Label Grid.Column="5" Text="{Binding Attendance}" FontAttributes="Bold"></Label>
+                            <Label Grid.Column="6" Text="{Binding GetAttendancePercentage}" FontAttributes="Bold"></Label>
+                            <Label Grid.Column="7" Text="{Binding Project}" FontAttributes="Bold"></Label>
+                            <Label Grid.Column="8" Text="{Binding GetProjectPercentage}" FontAttributes="Bold"></Label>
+                            <Label Grid.Column="9" Text="{Binding Total}" FontAttributes="Bold"></Label>
+                            <Label Grid.Column="10" Text="{Binding GetTotalPercentage}" FontAttributes="Bold"></Label>
+
+                        </Grid>
+                        <Line BackgroundColor="LightGray" />
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+            <CollectionView.FooterTemplate>
+                <DataTemplate>
+                    
+                </DataTemplate>
+            </CollectionView.FooterTemplate>
+        </CollectionView>
+
+    </VerticalStackLayout>
+</ContentPage>
+

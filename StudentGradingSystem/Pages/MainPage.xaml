@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Shell.FlyoutItemIsVisible="False"
+             x:Class="StudentGradingSystem.Pages.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Label
+                Text="Hi There!"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Are you a"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Student Management System"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="50">
+
+                <Button
+                    x:Name="StudentButton"
+                    Text="Student"
+                    SemanticProperties.Hint="Go to student's dashboard"
+                    Clicked="NavigateToStudentPage"
+                    HorizontalOptions="Center" />
+                    
+                <Button
+                    x:Name="TeacherButton"
+                    Text="Teacher"
+                    SemanticProperties.Hint="Go to teacher's dashboard"
+                    Clicked="NavigateToTeacherPage"
+                    HorizontalOptions="Center" />
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
+
